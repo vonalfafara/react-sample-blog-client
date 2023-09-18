@@ -11,9 +11,10 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./index.css";
 import http from "../../libraries/http";
-import * as dayjs from "dayjs";
+import dayjs from "dayjs";
 
 const Blog = () => {
+  const day = dayjs();
   const params = useParams();
   const [loggedIn, setLoggedIn] = useState(false);
   const [article, setArticle] = useState(null);
@@ -78,7 +79,7 @@ const Blog = () => {
       user_id: user.id,
       username: user.username,
       full_name: `${user.first_name} ${user.last_name}`.trim(),
-      created_at: dayjs().format("MMMM DD, YYYY hh:mm A"),
+      created_at: day.format("MMMM DD, YYYY hh:mm A"),
     };
 
     try {
