@@ -2,11 +2,12 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ReactQuill from "react-quill";
-import * as dayjs from "dayjs";
+import dayjs from "dayjs";
 import "react-quill/dist/quill.snow.css";
 import http from "../../libraries/http";
 
 const CreateBlog = () => {
+  const day = dayjs();
   const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -38,7 +39,7 @@ const CreateBlog = () => {
       description,
       body,
       userId: user.id,
-      created_at: dayjs().format("MMMM DD, YYYY hh:mm A"),
+      created_at: day.format("MMMM DD, YYYY hh:mm A"),
       author: `${user.first_name} ${user.last_name}`.trim(),
     };
 
