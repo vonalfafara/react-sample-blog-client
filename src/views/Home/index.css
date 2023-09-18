@@ -1,0 +1,10 @@
+section#home .card,
+section#home .create-blog {
+  max-width: 700px;
+  width: 100%;
+}
+
+section#home .card .blog-footer {
+  display: flex;
+  justify-content: flex-end;
+}

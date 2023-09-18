@@ -1,0 +1,4 @@
+section#blog .comment-section .card {
+  max-width: 700px;
+  width: 100%;
+}
